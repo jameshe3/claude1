@@ -1,0 +1,22 @@
+{
+  "name": "miniature-fairytale-world",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "可探索的 Three.js 微缩童话世界（四张程序化地图、天气与季节系统）",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5173",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 4173",
+    "start": "vite build && vite preview --host 127.0.0.1 --port 4173",
+    "verify": "node tools/verify.mjs verification/verify_result.json",
+    "shots": "node tools/capture.mjs tools/screenshots.json 1920 1080",
+    "report": "node tools/report.mjs"
+  },
+  "dependencies": {
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "vite": "7.3.7"
+  }
+}

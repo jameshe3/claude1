@@ -1,0 +1,847 @@
+{
+  "project": "微缩童话世界（Three.js）",
+  "generatedAt": "2026-11-06T02:43:16.805Z",
+  "run": {
+    "install": "npm install",
+    "dev": "npm run dev  →  http://127.0.0.1:5173/",
+    "production": "npm start（= vite build + vite preview）→  http://127.0.0.1:4173/",
+    "offline": "运行时不依赖任何远程 CDN；three.js 由 Vite 打包进 dist/，纹理全部运行时用 Canvas/着色器生成。",
+    "urlParams": {
+      "map": "?map=0..3 指定初始地图",
+      "manual": "?manual 手动步进模式（自动化截图/验证使用）"
+    }
+  },
+  "dependencies": {
+    "three": "0.186.1",
+    "vite": "7.3.7（开发依赖）",
+    "verificationOnly": "Playwright + Chromium（未写入依赖，使用本机已安装版本）"
+  },
+  "maps": [
+    {
+      "id": "shrine",
+      "name": "月夜林间神社",
+      "seed": 101,
+      "footprint": "40×40 方形地块，厚 5.5，石块+土层剖面",
+      "defaultEnvironment": {
+        "time": "夜晚（月光）",
+        "weather": "晴",
+        "season": "夏",
+        "palette": "冷蓝/青绿 + 暖黄灯笼"
+      },
+      "camera": {
+        "azimuthDeg": 45,
+        "elevationDeg": 40,
+        "composition": "菱形斜俯视，神社在后角、溪流横穿中部、小路自前角蜿蜒而上"
+      },
+      "components": [
+        "红色鸟居（笠木/岛木/贯/额束/注连绳与纸垂）",
+        "小型神社本殿（石台、台阶、回廊、格子门、茅草屋顶、千木与鲣木、赛钱箱与铃）",
+        "神社高台与石砌挡墙（坡道入口）",
+        "弯曲铺石小径 + 分支踏迹",
+        "穿过地图的溪流（远岸石砌陡岸、近岸缓坡）",
+        "朱红拱桥（可通行桥面）",
+        "浅滩踏石（可涉水，产生涟漪）",
+        "4 座石灯笼 + 2 盏木杆纸灯笼（点光源 + 光晕 + 水面倒影）",
+        "约 30 棵阔叶树/杉树 + 灌木丛",
+        "溪岸苔石、溪中卵石（带泡沫）与巨石群",
+        "石像（地藏）",
+        "草丛与白色/黄色小花",
+        "萤火虫 90 只",
+        "溪面低雾"
+      ],
+      "measured": {
+        "loadMs": 131.2,
+        "spawnWalkable": true,
+        "grassTufts": 3400,
+        "flowers": 1100,
+        "colliders": 118,
+        "walkDecks": 1,
+        "lamps": 6,
+        "smokeEmitters": 0,
+        "tileCornersInView1920x1080": "8/8",
+        "tileNdcExtent": [
+          -0.605,
+          0.624,
+          -0.904,
+          0.948
+        ],
+        "route": {
+          "waypointsReached": "8/8",
+          "climb": 1.38,
+          "maxGroundError": 0.23,
+          "framesInsideColliders": 0,
+          "framesInDeepWater": 0,
+          "minEdgeDistance": 3.52,
+          "companionDistances": [
+            0.96,
+            1.81,
+            2.66
+          ],
+          "companionGaps": [
+            0.96,
+            0.85,
+            0.85
+          ],
+          "companionsStoppedAfterPlayer": true
+        },
+        "ford": {
+          "waypointsReached": "3/3",
+          "wadingRipplesSpawned": 15
+        },
+        "blockingTests": [
+          {
+            "test": "走向神社本殿",
+            "end": [
+              -9.12,
+              -8.87,
+              1.32
+            ],
+            "remainingDistance": 2.27,
+            "framesInsideColliders": 0,
+            "framesInDeepWater": 0,
+            "minEdgeDistance": 10.88,
+            "maxClimb": 0
+          },
+          {
+            "test": "走向深水溪流",
+            "end": [
+              -6,
+              5.63,
+              -0.78
+            ],
+            "remainingDistance": 1.73,
+            "framesInsideColliders": 0,
+            "framesInDeepWater": 0,
+            "minEdgeDistance": 13.22,
+            "maxClimb": 0
+          },
+          {
+            "test": "走向地块边缘",
+            "end": [
+              5,
+              19.37,
+              0.04
+            ],
+            "remainingDistance": 5.63,
+            "framesInsideColliders": 0,
+            "framesInDeepWater": 0,
+            "minEdgeDistance": 0.63,
+            "maxClimb": 0.04
+          }
+        ]
+      }
+    },
+    {
+      "id": "village",
+      "name": "晴日田园村庄",
+      "seed": 202,
+      "footprint": "48×38 长方形地块，厚 4.5，赭黄土层 + 灰石剖面",
+      "defaultEnvironment": {
+        "time": "午后",
+        "weather": "晴",
+        "season": "春",
+        "palette": "明亮草绿 / 米黄 / 天蓝"
+      },
+      "camera": {
+        "azimuthDeg": 34,
+        "elevationDeg": 39,
+        "composition": "土路 S 形纵贯，左侧农舍与菜圃，右侧小屋与钟楼"
+      },
+      "components": [
+        "茅草四坡顶农舍（木构转角、腰线、窗与门、石基）",
+        "门廊小屋（双坡顶、烟囱、百叶窗、花箱、门灯）",
+        "蓝色小屋（老虎窗 ×2、双烟囱、门廊）",
+        "三层钟楼客栈（石砌底层、阳台栏杆、钟面、四坡红瓦顶）——地标建筑",
+        "木板小仓库",
+        "贯穿村落的土路与 5 条支路",
+        "小池塘（石岸、睡莲、芦苇）",
+        "菜圃（垄沟、卷心菜/葱/胡萝卜）与四周栅栏（留门）",
+        "路边栅栏",
+        "水井（石圈、辘轳、小屋顶）",
+        "草垛、路牌、长椅、木杆灯",
+        "约 22 棵树（含 3 棵春季樱花）+ 灌木",
+        "三处烟囱炊烟"
+      ],
+      "measured": {
+        "loadMs": 275.8,
+        "spawnWalkable": true,
+        "grassTufts": 3800,
+        "flowers": 1500,
+        "colliders": 89,
+        "walkDecks": 0,
+        "lamps": 2,
+        "smokeEmitters": 4,
+        "tileCornersInView1920x1080": "8/8",
+        "tileNdcExtent": [
+          -0.655,
+          0.669,
+          -0.921,
+          0.966
+        ],
+        "route": {
+          "waypointsReached": "6/6",
+          "climb": 0.5,
+          "maxGroundError": 0.009,
+          "framesInsideColliders": 0,
+          "framesInDeepWater": 0,
+          "minEdgeDistance": 3.82,
+          "companionDistances": [
+            0.9,
+            1.75,
+            2.6
+          ],
+          "companionGaps": [
+            0.9,
+            0.85,
+            0.85
+          ],
+          "companionsStoppedAfterPlayer": true
+        },
+        "blockingTests": [
+          {
+            "test": "走向蓝色小屋墙体",
+            "end": [
+              10.09,
+              -6.58,
+              0.23
+            ],
+            "remainingDistance": 2.71,
+            "framesInsideColliders": 0,
+            "framesInDeepWater": 0,
+            "minEdgeDistance": 12.42,
+            "maxClimb": 0.14
+          },
+          {
+            "test": "走向池塘中心",
+            "end": [
+              -6.61,
+              7.36,
+              -0.18
+            ],
+            "remainingDistance": 4.13,
+            "framesInsideColliders": 0,
+            "framesInDeepWater": 0,
+            "minEdgeDistance": 11.64,
+            "maxClimb": 0
+          },
+          {
+            "test": "走向地块边缘",
+            "end": [
+              -23.37,
+              12,
+              0.48
+            ],
+            "remainingDistance": 6.63,
+            "framesInsideColliders": 0,
+            "framesInDeepWater": 0,
+            "minEdgeDistance": 0.63,
+            "maxClimb": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "riverside",
+      "name": "日落河岸小镇",
+      "seed": 303,
+      "footprint": "52×34 长方形地块，厚 4.2，前缘露出河水横截面",
+      "defaultEnvironment": {
+        "time": "日落",
+        "weather": "晴",
+        "season": "夏",
+        "palette": "蜜桃 / 紫粉 / 暖橙 与 蓝绿 的冷暖对比"
+      },
+      "camera": {
+        "azimuthDeg": 11,
+        "elevationDeg": 42,
+        "composition": "正面构图：后排台地房屋、中部步道与灯串、前景大面积河面"
+      },
+      "components": [
+        "台地上 4 栋形态各异的沿岸房屋 + 屋后小屋（老虎窗、石板/瓦屋顶、烟囱、门廊、木构）",
+        "台地石砌挡墙与 3 条坡道",
+        "铺石河岸步道",
+        "6 盏暖色路灯 + 路灯之间的悬垂灯串（每段 10 颗灯泡）",
+        "木制推车摊位（车轮、条纹遮阳棚、货箱与水果、挂灯）",
+        "长椅、花箱、木桶、货箱",
+        "河堤石沿",
+        "木栈桥（可行走）与随水起伏的小船",
+        "河中岩石（泡沫环）",
+        "水面：流动笔触高光、岸线泡沫、视角相关闪光、路灯倒影"
+      ],
+      "measured": {
+        "loadMs": 192.6,
+        "spawnWalkable": true,
+        "grassTufts": 2600,
+        "flowers": 1400,
+        "colliders": 66,
+        "walkDecks": 1,
+        "lamps": 7,
+        "smokeEmitters": 4,
+        "tileCornersInView1920x1080": "8/8",
+        "tileNdcExtent": [
+          -0.728,
+          0.753,
+          -0.959,
+          0.946
+        ],
+        "route": {
+          "waypointsReached": "9/9",
+          "climb": 0.15,
+          "maxGroundError": 0.08,
+          "framesInsideColliders": 0,
+          "framesInDeepWater": 0,
+          "minEdgeDistance": 9.08,
+          "companionDistances": [
+            0.96,
+            1.81,
+            2.66
+          ],
+          "companionGaps": [
+            0.96,
+            0.85,
+            0.85
+          ],
+          "companionsStoppedAfterPlayer": true
+        },
+        "blockingTests": [
+          {
+            "test": "走向河中央",
+            "end": [
+              3,
+              2.87,
+              -0.01
+            ],
+            "remainingDistance": 7.13,
+            "framesInsideColliders": 0,
+            "framesInDeepWater": 0,
+            "minEdgeDistance": 14.13,
+            "maxClimb": 0
+          },
+          {
+            "test": "走向房屋",
+            "end": [
+              7,
+              -9.1,
+              1.46
+            ],
+            "remainingDistance": 3.1,
+            "framesInsideColliders": 0,
+            "framesInDeepWater": 0,
+            "minEdgeDistance": 7.9,
+            "maxClimb": 0
+          },
+          {
+            "test": "攀爬台地挡墙",
+            "end": [
+              -9,
+              -5.87,
+              0.03
+            ],
+            "remainingDistance": 3.63,
+            "framesInsideColliders": 0,
+            "framesInDeepWater": 0,
+            "minEdgeDistance": 11.13,
+            "maxClimb": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "mountain",
+      "name": "云雾山间小径",
+      "seed": 404,
+      "footprint": "直径约 44 的不规则悬浮山岛，底部为锥形岩土",
+      "defaultEnvironment": {
+        "time": "清晨",
+        "weather": "晴",
+        "season": "夏",
+        "palette": "草绿 / 浅灰石墙 / 天蓝云海"
+      },
+      "camera": {
+        "azimuthDeg": -32,
+        "elevationDeg": 31,
+        "composition": "侧斜视角突出高差与悬浮岩体，背景为云海"
+      },
+      "components": [
+        "约 12.6 高的阶梯山体，6 层石砌梯田挡墙",
+        "顺时针盘绕 1.33 圈的盘山道（切填坡道，全程可走）",
+        "切穿岛缘的峡谷 + 连接两侧的木板吊桥（绳索护栏、可行走）",
+        "山顶平台与凉亭（可站上）、石灯笼",
+        "路旁石桩、起点路牌",
+        "零星树木（阔叶/杉）、灌木、岩石",
+        "43 团在地形间缓慢漂移的云雾（靠近角色自动变淡）",
+        "背景云海"
+      ],
+      "measured": {
+        "loadMs": 203.7,
+        "spawnWalkable": true,
+        "grassTufts": 4200,
+        "flowers": 1700,
+        "colliders": 103,
+        "walkDecks": 2,
+        "lamps": 1,
+        "smokeEmitters": 0,
+        "tileCornersInView1920x1080": "50/50",
+        "tileNdcExtent": [
+          -0.688,
+          0.684,
+          -0.928,
+          0.995
+        ],
+        "route": {
+          "waypointsReached": "30/30",
+          "note": "沿盘山道 30 个航点（含峡谷木桥）登顶",
+          "climb": 12.14,
+          "maxGroundError": 0.269,
+          "framesInsideColliders": 0,
+          "framesInDeepWater": 0,
+          "minEdgeDistance": 1.63,
+          "companionDistances": [
+            0.91,
+            1.75,
+            2.55
+          ],
+          "companionGaps": [
+            0.91,
+            0.85,
+            0.85
+          ],
+          "companionsStoppedAfterPlayer": true
+        },
+        "blockingTests": [
+          {
+            "test": "走出浮岛边缘",
+            "end": [
+              -10.12,
+              15.37,
+              0.51
+            ],
+            "remainingDistance": 10.92,
+            "framesInsideColliders": 0,
+            "framesInDeepWater": 0,
+            "minEdgeDistance": 0.65,
+            "maxClimb": 0
+          },
+          {
+            "test": "攀爬梯田挡墙",
+            "end": [
+              -4.88,
+              12.38,
+              2.14
+            ],
+            "remainingDistance": 14.24,
+            "framesInsideColliders": 0,
+            "framesInDeepWater": 0,
+            "minEdgeDistance": 3.85,
+            "maxClimb": 0.17
+          }
+        ]
+      }
+    }
+  ],
+  "environmentEffects": {
+    "vegetationWind": "顶点着色器风动：草丛/花朵按高度平方摆动，树冠卡片按高度与实例位置相位摆动，相位来自世界坐标与实例序号，避免同步",
+    "water": "基于 Lambert 的透明水体（接收阴影）：深浅色、流向图驱动的三层笔触高光（闪烁）、岸线/岩石泡沫、法线扰动的视角相关闪光、天空反射、雨滴涟漪、角色/互动涟漪（10 个槽位）、灯光拉长倒影；河道穿出地块时绘制水体横截面",
+    "smoke": "烟囱烟为 GPU 粒子（每烟囱 18 粒），随时间上升、扩散、随风偏移",
+    "mist": "实例化面片云雾，fbm 噪声轮廓，按水平漂移循环，贴近地面处与靠近角色处自动淡出",
+    "particles": "夜间萤火虫（闪烁 + 漂移），春季花瓣/秋季落叶飘落，互动光点（CPU 粒子池 96）",
+    "characters": "腿/臂摆动、身体起伏、平滑转向、减速停步；伙伴沿足迹跟随并在停下后转向玩家；灯笼精灵悬浮摆动"
+  },
+  "weather": {
+    "clear": "地图默认光照",
+    "rain": "4200 条按速度方向拉长的雨丝（近处更长更亮、远处更短更淡）+ 700 个地面溅落环；太阳光降至约 28%，天光/背景/雾偏灰，雾加浓，饱和度降低，地表与植被湿润变暗，水面雨滴涟漪，灯光与窗光增强，萤火虫隐藏，风加强",
+    "snow": "3200 片带深度大小变化的雪花；积雪随时间在朝上表面累积（地表、屋顶、树冠、岩石），停止下雪后缓慢融化；光照偏冷、背景与雾偏白",
+    "note": "雨丝与雪花在绘画滤镜之后的叠加层绘制，避免细线被 Kuwahara 抹平；粒子在地形以下自动裁剪"
+  },
+  "seasons": {
+    "linked": [
+      "树叶颜色（春新绿+樱花 / 夏浓绿 / 秋橙红黄 / 冬灰褐）",
+      "落叶量（冬季保留约 22% 叶片，露出枝干）",
+      "地表草色与枯草斑块",
+      "花朵数量与颜色（实例显隐）与地表花点",
+      "草丛颜色",
+      "积雪基础覆盖（冬季 0.82）",
+      "飘落粒子（春花瓣 / 秋落叶）",
+      "光照色温与饱和度"
+    ],
+    "transition": "地表顶点色在 0.9 秒内插值过渡，叶量/积雪/粒子量平滑过渡"
+  },
+  "interaction": {
+    "movement": "WASD/方向键（相对相机方向），Shift 奔跑；角色朝向与移动方向一致",
+    "walkable": "0.25 网格的可通行图：地块边缘留边、深水（>0.3）不可走、坡度 >0.95 不可走、建筑/树干/岩石/灯柱等碰撞体不可走；桥面/栈桥/凉亭为高度覆盖的可行走平台；单帧高差 >0.55 拒绝移动",
+    "terrainFollow": "角色高度平滑贴合地形或桥面",
+    "companions": "3 名伙伴（橡果精、红兜帽、灯笼精灵）按足迹弧长 0.85 间距跟随",
+    "camera": "左键拖动旋转（方位 + 仰角限制）、右键/Shift 拖动平移、滚轮/双指缩放（0.75–6 倍）、R 或按钮重置、自动环绕开关；越放大越紧跟角色",
+    "feedback": [
+      "靠近灯笼：点光源与光晕平滑增强（约 1.65 倍）",
+      "E/空格：角色周围光点爆发；附近灯笼闪亮；附近水面产生涟漪；中文提示",
+      "涉水/靠近水边行走：持续产生涟漪"
+    ],
+    "pause": "暂停仅冻结环境时间（风、水、粒子、天气、雾、船、灯焰闪烁），角色仍可操作；恢复后环境时间从暂停值继续，无跳变",
+    "mapSwitch": "切换地图时释放旧地图的几何/材质/纹理，角色在该地图出生点（自动吸附到最近可通行处），相机恢复该地图的默认构图，天气季节恢复该地图默认值"
+  },
+  "implementation": {
+    "rendering": [
+      "正交斜俯视相机，按当前角度把地块包围盒投影到屏幕自动取景",
+      "MeshLambertMaterial + onBeforeCompile 注入：柔和明暗分区光照、世界空间笔触噪声、积雪、湿润、风动、建筑图集采样",
+      "地形着色器：草地笔触、程序化花点、Voronoi 铺石小路、陡坡自动石墙纹理",
+      "剖面着色器：草皮唇边/深色表土/赭黄土层/石块层",
+      "方向光 4096 阴影 + 半球光 + 每图最多约 8 个点光源",
+      "多重采样 HalfFloat 渲染 → UnrealBloom（只让灯泡/月亮等高亮泛光）→ 八扇区广义 Kuwahara 绘画滤镜 + 调色/暗角/纸纹 → 天气叠加层 → Neutral 色调映射输出",
+      "背景着色器：渐变、地平光、星空、月牙、云海"
+    ],
+    "assets": [
+      "树冠：面向相机的叶簇卡片（球面法线、扇贝状叶团贴图、Alpha 裁剪、受光边缘高光），自定义深度材质用于阴影",
+      "建筑：GeoBuilder 将盒体、柱体、双坡/四坡屋顶等合并为单一网格，世界尺度 UV + 4×4 灰度图集（灰泥、木板、茅草、瓦片、石墙、砖块、障子、条纹布等）"
+    ],
+    "performance": [
+      "InstancedMesh：树冠/树干按变体实例化，草丛（2600–4200）、花朵（1100–1700）、岩石均为实例",
+      "材质全局共享，切换地图不重新编译",
+      "粒子数量固定上限，全部 GPU 驱动（雨 4200、雪 3200、溅落 700、萤火虫 ≤90、烟 18/烟囱、云雾 ≤43、落叶 ≤140、光点池 96）",
+      "像素比上限 1.5；绘画滤镜可关闭",
+      "静态建筑与道具合并为 3 个网格（建筑/玻璃/灯泡）"
+    ],
+    "determinism": "所有布局使用 mulberry32 固定种子（每图 seed 101/202/303/404），噪声为确定性哈希，场景可复现",
+    "resourceManagement": "事件监听只在启动时注册一次；地图对象 dispose() 释放非共享几何、材质与 DataTexture；共享资源以 userData.shared 标记"
+  },
+  "verification": {
+    "method": "在 Chromium（Playwright）中加载 vite preview 构建产物，?manual 模式按固定步长推进真实主循环；移动测试用自动驾驶生成与相机相对的输入，经由真实的 Party.update / 碰撞 / 可通行网格代码；相机、暂停、天气、季节、地图切换通过真实鼠标、键盘与按钮点击触发",
+    "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+    "camera": {
+      "initial": {
+        "az": 0.6,
+        "el": 0.68,
+        "zoom": 1
+      },
+      "afterDragWheel": {
+        "az": -0.6999989190126651,
+        "el": 0.9499997754872455,
+        "zoom": 2.1814712830700818
+      },
+      "follow": {
+        "targetToPlayer": 0.22,
+        "zoom": 2.18
+      },
+      "afterReset": {
+        "az": 0.5999999990142671,
+        "el": 0.6800000002047292,
+        "zoom": 1.0000000008958587
+      },
+      "autoOrbit": {
+        "orbitOn": true,
+        "azDelta": 0.225
+      },
+      "dragChangedAz": true,
+      "wheelZoomed": true,
+      "resetRestored": true
+    },
+    "pause": {
+      "envAtPause": 145.91666666666094,
+      "during": {
+        "paused": true,
+        "envFrozen": true,
+        "envTime": 145.91666666666094,
+        "uTime": 145.91666666666094,
+        "btn": "继续环境",
+        "x0": 0.42699537722911923,
+        "z0": 10.440493065843677
+      },
+      "playerMovedWhilePaused": 2.62,
+      "after": {
+        "paused": false,
+        "envBefore": 145.91666666666094,
+        "envAfter": 146.9166666666609
+      },
+      "resumedContinuously": true
+    },
+    "interaction": {
+      "lampFar": {
+        "boost": 0,
+        "intensity": 5.128088740237655
+      },
+      "lampNear": {
+        "boost": 0.9975212478233337,
+        "intensity": 8.602836483354308
+      },
+      "lampBoosted": true,
+      "keyE": {
+        "flash": 1,
+        "intensityAfterFlash": 13.98,
+        "sparklesAlive": 52,
+        "toast": "灯火被点亮，暖光一闪",
+        "lampFlag": true
+      },
+      "waterRipple": {
+        "ripplesAdded": 2,
+        "waterFlag": true,
+        "toast": "水面荡开一圈圈涟漪"
+      }
+    },
+    "weather": {
+      "baseSun": 2.7,
+      "rain": {
+        "state": "rain",
+        "rainAmt": 1,
+        "wet": 0.71,
+        "sun": 0.76,
+        "rainVisible": true,
+        "splashVisible": true
+      },
+      "snow": {
+        "state": "snow",
+        "snowCoverOverTime": [
+          0.35,
+          0.7,
+          1,
+          1
+        ],
+        "snowVisible": true,
+        "rainVisible": false
+      },
+      "clear": {
+        "state": "clear",
+        "snowCover": 0.28,
+        "sun": 2.7
+      },
+      "rainDimmedSun": true,
+      "snowAccumulated": true,
+      "meltedAfterClear": true
+    },
+    "season": {
+      "spring": {
+        "state": "spring",
+        "leafAmount": 1,
+        "snowCover": 0,
+        "leafFall": 0.45,
+        "terrainAvgColor": [
+          0.266,
+          0.465,
+          0.084
+        ]
+      },
+      "summer": {
+        "state": "summer",
+        "leafAmount": 1,
+        "snowCover": 0,
+        "leafFall": 0,
+        "terrainAvgColor": [
+          0.201,
+          0.361,
+          0.064
+        ]
+      },
+      "autumn": {
+        "state": "autumn",
+        "leafAmount": 0.88,
+        "snowCover": 0,
+        "leafFall": 0.84,
+        "terrainAvgColor": [
+          0.379,
+          0.298,
+          0.09
+        ]
+      },
+      "winter": {
+        "state": "winter",
+        "leafAmount": 0.22,
+        "snowCover": 0.21,
+        "leafFall": 0.01,
+        "terrainAvgColor": [
+          0.377,
+          0.364,
+          0.24
+        ]
+      }
+    },
+    "keyboard": {
+      "KeyW": {
+        "moved": 1.85,
+        "moveDir": -2.54,
+        "yaw": -2.54
+      },
+      "ArrowLeft": {
+        "moved": 1.85,
+        "moveDir": -0.97,
+        "yaw": -0.97
+      },
+      "KeyS": {
+        "moved": 1.85,
+        "moveDir": 0.6,
+        "yaw": 0.6
+      },
+      "ArrowRight": {
+        "moved": 1.85,
+        "moveDir": 2.17,
+        "yaw": 2.17
+      }
+    },
+    "mapSwitching": {
+      "stableAcrossCycles": true,
+      "listenerAddsDuringSwitching": 0,
+      "samples": [
+        {
+          "cycle": 0,
+          "map": "shrine",
+          "geometries": 60,
+          "textures": 19,
+          "programs": 60,
+          "sceneChildren": 10,
+          "heapMB": 45.2
+        },
+        {
+          "cycle": 0,
+          "map": "village",
+          "geometries": 56,
+          "textures": 19,
+          "programs": 59,
+          "sceneChildren": 10,
+          "heapMB": 45.2
+        },
+        {
+          "cycle": 0,
+          "map": "riverside",
+          "geometries": 55,
+          "textures": 19,
+          "programs": 60,
+          "sceneChildren": 10,
+          "heapMB": 45.2
+        },
+        {
+          "cycle": 0,
+          "map": "mountain",
+          "geometries": 49,
+          "textures": 19,
+          "programs": 59,
+          "sceneChildren": 10,
+          "heapMB": 45.2
+        },
+        {
+          "cycle": 1,
+          "map": "shrine",
+          "geometries": 60,
+          "textures": 19,
+          "programs": 60,
+          "sceneChildren": 10,
+          "heapMB": 45.2
+        },
+        {
+          "cycle": 1,
+          "map": "village",
+          "geometries": 56,
+          "textures": 19,
+          "programs": 59,
+          "sceneChildren": 10,
+          "heapMB": 45.2
+        },
+        {
+          "cycle": 1,
+          "map": "riverside",
+          "geometries": 55,
+          "textures": 19,
+          "programs": 60,
+          "sceneChildren": 10,
+          "heapMB": 45.2
+        },
+        {
+          "cycle": 1,
+          "map": "mountain",
+          "geometries": 49,
+          "textures": 19,
+          "programs": 59,
+          "sceneChildren": 10,
+          "heapMB": 45.2
+        },
+        {
+          "cycle": 2,
+          "map": "shrine",
+          "geometries": 60,
+          "textures": 19,
+          "programs": 60,
+          "sceneChildren": 10,
+          "heapMB": 45.2
+        },
+        {
+          "cycle": 2,
+          "map": "village",
+          "geometries": 56,
+          "textures": 19,
+          "programs": 59,
+          "sceneChildren": 10,
+          "heapMB": 45.2
+        },
+        {
+          "cycle": 2,
+          "map": "riverside",
+          "geometries": 55,
+          "textures": 19,
+          "programs": 60,
+          "sceneChildren": 10,
+          "heapMB": 45.2
+        },
+        {
+          "cycle": 2,
+          "map": "mountain",
+          "geometries": 49,
+          "textures": 19,
+          "programs": 59,
+          "sceneChildren": 10,
+          "heapMB": 45.2
+        }
+      ]
+    },
+    "viewport1366x768": {
+      "panel": [
+        16,
+        16,
+        252,
+        338
+      ],
+      "hint": [
+        352,
+        723,
+        662,
+        31
+      ],
+      "buttons": 16,
+      "buttonsVisibleAndClickable": 16,
+      "overlapPanelHint": false,
+      "mapSwitchByClick": "mountain"
+    },
+    "consoleErrors": [],
+    "consoleWarnings": [],
+    "rawResult": "verification/verify_result.json",
+    "screenshotsReviewed": "所有截图均来自真实运行页面并已逐张人工查看（无黑屏/占位内容）；发现的问题（夜间地表过亮、雨丝被滤镜抹平、背景泛光造成雾化、村庄低洼处误出现水面、浮岛底部开口、山顶树木挡路、浅滩远岸过陡无法上岸等）已修正后重新截图"
+  },
+  "screenshots": [
+    "screenshots/01_shrine_default.png",
+    "screenshots/02_village_default.png",
+    "screenshots/03_riverside_default.png",
+    "screenshots/04_mountain_default.png",
+    "screenshots/05_rain_riverside.png",
+    "screenshots/06_rain_shrine_closeup.png",
+    "screenshots/07_snow_village.png",
+    "screenshots/08_snow_shrine.png",
+    "screenshots/09_autumn_village.png",
+    "screenshots/10_autumn_mountain.png",
+    "screenshots/11_winter_mountain.png",
+    "screenshots/12_winter_village.png",
+    "screenshots/13_closeup_shrine_bridge.png",
+    "screenshots/14_closeup_shrine_torii.png",
+    "screenshots/15_closeup_village.png",
+    "screenshots/16_closeup_riverside.png",
+    "screenshots/17_closeup_mountain_bridge.png",
+    "screenshots/18_interaction_lantern.png",
+    "screenshots/19_ui_1366x768.png"
+  ],
+  "knownIssues": [
+    "验证环境只有 SwiftShader 软件渲染（无 GPU），因此没有真实 GPU 下的帧率数据；SwiftShader 下 1920×1080 单帧约需数百毫秒，交互流畅度需在有显卡的机器上确认",
+    "绘画滤镜（24 采样 × 8 扇区）在高分屏/集成显卡上开销较大，可在面板中关闭“绘画滤镜”",
+    "雨丝与雪花在叠加层绘制，不会被建筑或树冠遮挡（仅在地形以下裁剪）",
+    "云雾是面片，与陡峭岩壁相交处仍可能出现轻微硬边",
+    "伙伴沿足迹跟随，不做彼此避让；急转弯时可能短暂贴近",
+    "角色与道具为简单几何造型，没有骨骼动画；没有音效",
+    "背景渐变/云海是屏幕空间绘制，旋转相机时不随视角产生透视变化",
+    "季节切换时树冠颜色为即时切换（地表为 0.9 秒渐变）",
+    "移动端仅做了基础的触控旋转/缩放适配，没有虚拟摇杆"
+  ]
+}

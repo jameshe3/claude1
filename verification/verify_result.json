@@ -1,0 +1,786 @@
+{
+  "startedAt": "2026-11-06T02:39:40.324Z",
+  "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (Subzero) (0x0000C0DE)), SwiftShader driver)",
+  "viewports": {
+    "1366x768": {
+      "panel": [
+        16,
+        16,
+        252,
+        338
+      ],
+      "hint": [
+        352,
+        723,
+        662,
+        31
+      ],
+      "buttons": 16,
+      "buttonsVisibleAndClickable": 16,
+      "overlapPanelHint": false,
+      "mapSwitchByClick": "mountain"
+    }
+  },
+  "maps": {
+    "月夜林间神社": {
+      "name": "月夜林间神社",
+      "loadMs": 131.2,
+      "spawnWalkable": true,
+      "stats": {
+        "grass": 3400,
+        "flowers": 1100
+      },
+      "colliders": 118,
+      "decks": 1,
+      "lamps": 6,
+      "smokeEmitters": 0,
+      "tileInView": "8/8",
+      "ndcExtent": [
+        -0.605,
+        0.624,
+        -0.904,
+        0.948
+      ],
+      "route": {
+        "reached": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "maxGroundErr": 0.22994103101167662,
+        "enteredCollider": 0,
+        "minEdge": 3.523731774971278,
+        "deepWater": 0,
+        "steps": 301,
+        "final": {
+          "x": -7.97,
+          "z": -7.97,
+          "y": 1.38
+        },
+        "companionDist": [
+          0.96,
+          1.81,
+          2.66
+        ],
+        "companionGap": [
+          0.96,
+          0.85,
+          0.85
+        ],
+        "companionsStill": true,
+        "climb": 1.38
+      },
+      "ford": {
+        "reached": [
+          true,
+          true,
+          true
+        ],
+        "maxGroundErr": 0.072424616376667,
+        "enteredCollider": 0,
+        "minEdge": 6.577900973645566,
+        "deepWater": 0,
+        "steps": 143,
+        "final": {
+          "x": 13.49,
+          "z": -6.28,
+          "y": 0.22
+        },
+        "companionDist": [
+          0.96,
+          1.81,
+          2.66
+        ],
+        "companionGap": [
+          0.96,
+          0.85,
+          0.85
+        ],
+        "companionsStill": true,
+        "ripplesSpawned": 15
+      },
+      "push": [
+        {
+          "enteredCollider": 0,
+          "minEdge": 10.87644516393462,
+          "deepWater": 0,
+          "maxClimb": 0,
+          "start": [
+            -8.2,
+            -8.2,
+            1.3670040369033813
+          ],
+          "end": [
+            -9.12,
+            -8.87,
+            1.32
+          ],
+          "distToTarget": 2.27,
+          "name": "走向神社本殿"
+        },
+        {
+          "enteredCollider": 0,
+          "minEdge": 13.224689952937096,
+          "deepWater": 0,
+          "maxClimb": 0,
+          "start": [
+            -5.5,
+            6.8,
+            -0.10956273600459099
+          ],
+          "end": [
+            -6,
+            5.63,
+            -0.78
+          ],
+          "distToTarget": 1.73,
+          "name": "走向深水溪流"
+        },
+        {
+          "enteredCollider": 0,
+          "minEdge": 0.6271661028916249,
+          "deepWater": 0,
+          "maxClimb": 0.03822883711598482,
+          "start": [
+            5,
+            16,
+            0.0007985574193298817
+          ],
+          "end": [
+            5,
+            19.37,
+            0.04
+          ],
+          "distToTarget": 5.63,
+          "name": "走向地块边缘"
+        }
+      ]
+    },
+    "晴日田园村庄": {
+      "name": "晴日田园村庄",
+      "loadMs": 275.8,
+      "spawnWalkable": true,
+      "stats": {
+        "grass": 3800,
+        "flowers": 1500
+      },
+      "colliders": 89,
+      "decks": 0,
+      "lamps": 2,
+      "smokeEmitters": 4,
+      "tileInView": "8/8",
+      "ndcExtent": [
+        -0.655,
+        0.669,
+        -0.921,
+        0.966
+      ],
+      "route": {
+        "reached": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "maxGroundErr": 0.009095461998912258,
+        "enteredCollider": 0,
+        "minEdge": 3.824882632273413,
+        "deepWater": 0,
+        "steps": 324,
+        "final": {
+          "x": -1.68,
+          "z": -14.7,
+          "y": 0.71
+        },
+        "companionDist": [
+          0.9,
+          1.75,
+          2.6
+        ],
+        "companionGap": [
+          0.9,
+          0.85,
+          0.85
+        ],
+        "companionsStill": true,
+        "climb": 0.5
+      },
+      "push": [
+        {
+          "enteredCollider": 0,
+          "minEdge": 12.415593559979172,
+          "deepWater": 0,
+          "maxClimb": 0.1415161220564516,
+          "start": [
+            4.6,
+            -4.8,
+            0.0933547541499138
+          ],
+          "end": [
+            10.09,
+            -6.58,
+            0.23
+          ],
+          "distToTarget": 2.71,
+          "name": "走向蓝色小屋墙体"
+        },
+        {
+          "enteredCollider": 0,
+          "minEdge": 11.643123207758482,
+          "deepWater": 0,
+          "maxClimb": 0.0014827743168044083,
+          "start": [
+            -5.677302443521268,
+            6.967508121342707,
+            0.18449548682683392
+          ],
+          "end": [
+            -6.61,
+            7.36,
+            -0.18
+          ],
+          "distToTarget": 4.13,
+          "name": "走向池塘中心"
+        },
+        {
+          "enteredCollider": 0,
+          "minEdge": 0.6271661028916249,
+          "deepWater": 0,
+          "maxClimb": 0,
+          "start": [
+            -20,
+            12,
+            0.5283352136611938
+          ],
+          "end": [
+            -23.37,
+            12,
+            0.48
+          ],
+          "distToTarget": 6.63,
+          "name": "走向地块边缘"
+        }
+      ]
+    },
+    "日落河岸小镇": {
+      "name": "日落河岸小镇",
+      "loadMs": 192.6,
+      "spawnWalkable": true,
+      "stats": {
+        "grass": 2600,
+        "flowers": 1400
+      },
+      "colliders": 66,
+      "decks": 1,
+      "lamps": 7,
+      "smokeEmitters": 4,
+      "tileInView": "8/8",
+      "ndcExtent": [
+        -0.728,
+        0.753,
+        -0.959,
+        0.946
+      ],
+      "route": {
+        "reached": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "maxGroundErr": 0.07959397699221922,
+        "enteredCollider": 0,
+        "minEdge": 9.080110074372262,
+        "deepWater": 0,
+        "steps": 343,
+        "final": {
+          "x": 6.5,
+          "z": 7.52,
+          "y": 0.17
+        },
+        "companionDist": [
+          0.96,
+          1.81,
+          2.66
+        ],
+        "companionGap": [
+          0.96,
+          0.85,
+          0.85
+        ],
+        "companionsStill": true,
+        "climb": 0.15
+      },
+      "push": [
+        {
+          "enteredCollider": 0,
+          "minEdge": 14.126844566245502,
+          "deepWater": 0,
+          "maxClimb": 0,
+          "start": [
+            3,
+            0.5,
+            0.0315761249512434
+          ],
+          "end": [
+            3,
+            2.87,
+            -0.01
+          ],
+          "distToTarget": 7.13,
+          "name": "走向河中央"
+        },
+        {
+          "enteredCollider": 0,
+          "minEdge": 7.897777249984678,
+          "deepWater": 0,
+          "maxClimb": 0,
+          "start": [
+            7,
+            -9,
+            1.4641656875610352
+          ],
+          "end": [
+            7,
+            -9.1,
+            1.46
+          ],
+          "distToTarget": 3.1,
+          "name": "走向房屋"
+        },
+        {
+          "enteredCollider": 0,
+          "minEdge": 11.131330886154988,
+          "deepWater": 0,
+          "maxClimb": 0.00015143517531895911,
+          "start": [
+            -9,
+            -5.8,
+            0.03088234551250935
+          ],
+          "end": [
+            -9,
+            -5.87,
+            0.03
+          ],
+          "distToTarget": 3.63,
+          "name": "攀爬台地挡墙"
+        }
+      ]
+    },
+    "云雾山间小径": {
+      "name": "云雾山间小径",
+      "loadMs": 203.7,
+      "spawnWalkable": true,
+      "stats": {
+        "grass": 4200,
+        "flowers": 1700
+      },
+      "colliders": 103,
+      "decks": 2,
+      "lamps": 1,
+      "smokeEmitters": 0,
+      "tileInView": "50/50",
+      "ndcExtent": [
+        -0.688,
+        0.684,
+        -0.928,
+        0.995
+      ],
+      "routeNote": "沿盘山道 30 个航点（含峡谷木桥）登顶",
+      "route": {
+        "reached": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ],
+        "maxGroundErr": 0.26908795361472326,
+        "enteredCollider": 0,
+        "minEdge": 1.6269805233134669,
+        "deepWater": 0,
+        "steps": 888,
+        "final": {
+          "x": 2.98,
+          "z": -0.45,
+          "y": 12.68
+        },
+        "companionDist": [
+          0.91,
+          1.75,
+          2.55
+        ],
+        "companionGap": [
+          0.91,
+          0.85,
+          0.85
+        ],
+        "companionsStill": true,
+        "climb": 12.14
+      },
+      "push": [
+        {
+          "enteredCollider": 0,
+          "minEdge": 0.652401504668557,
+          "deepWater": 0,
+          "maxClimb": 0,
+          "start": [
+            -9.239960205475462,
+            14.632376960974689,
+            0.5355884031922336
+          ],
+          "end": [
+            -10.12,
+            15.37,
+            0.51
+          ],
+          "distToTarget": 10.92,
+          "name": "走出浮岛边缘"
+        },
+        {
+          "enteredCollider": 0,
+          "minEdge": 3.854658726000917,
+          "deepWater": 0,
+          "maxClimb": 0.16713231526381267,
+          "start": [
+            -5.6,
+            13.6,
+            1.9723751544952386
+          ],
+          "end": [
+            -4.88,
+            12.38,
+            2.14
+          ],
+          "distToTarget": 14.24,
+          "name": "攀爬梯田挡墙"
+        }
+      ]
+    }
+  },
+  "camera": {
+    "initial": {
+      "az": 0.6,
+      "el": 0.68,
+      "zoom": 1
+    },
+    "afterDragWheel": {
+      "az": -0.6999989190126651,
+      "el": 0.9499997754872455,
+      "zoom": 2.1814712830700818
+    },
+    "follow": {
+      "targetToPlayer": 0.22,
+      "zoom": 2.18
+    },
+    "afterReset": {
+      "az": 0.5999999990142671,
+      "el": 0.6800000002047292,
+      "zoom": 1.0000000008958587
+    },
+    "autoOrbit": {
+      "orbitOn": true,
+      "azDelta": 0.225
+    },
+    "dragChangedAz": true,
+    "wheelZoomed": true,
+    "resetRestored": true
+  },
+  "pause": {
+    "envAtPause": 145.91666666666094,
+    "during": {
+      "paused": true,
+      "envFrozen": true,
+      "envTime": 145.91666666666094,
+      "uTime": 145.91666666666094,
+      "btn": "继续环境",
+      "x0": 0.42699537722911923,
+      "z0": 10.440493065843677
+    },
+    "playerMovedWhilePaused": 2.62,
+    "after": {
+      "paused": false,
+      "envBefore": 145.91666666666094,
+      "envAfter": 146.9166666666609
+    },
+    "resumedContinuously": true
+  },
+  "interaction": {
+    "lampFar": {
+      "boost": 0,
+      "intensity": 5.128088740237655
+    },
+    "lampNear": {
+      "boost": 0.9975212478233337,
+      "intensity": 8.602836483354308
+    },
+    "lampBoosted": true,
+    "keyE": {
+      "flash": 1,
+      "intensityAfterFlash": 13.98,
+      "sparklesAlive": 52,
+      "toast": "灯火被点亮，暖光一闪",
+      "lampFlag": true
+    },
+    "waterRipple": {
+      "ripplesAdded": 2,
+      "waterFlag": true,
+      "toast": "水面荡开一圈圈涟漪"
+    }
+  },
+  "weather": {
+    "baseSun": 2.7,
+    "rain": {
+      "state": "rain",
+      "rainAmt": 1,
+      "wet": 0.71,
+      "sun": 0.76,
+      "rainVisible": true,
+      "splashVisible": true
+    },
+    "snow": {
+      "state": "snow",
+      "snowCoverOverTime": [
+        0.35,
+        0.7,
+        1,
+        1
+      ],
+      "snowVisible": true,
+      "rainVisible": false
+    },
+    "clear": {
+      "state": "clear",
+      "snowCover": 0.28,
+      "sun": 2.7
+    },
+    "rainDimmedSun": true,
+    "snowAccumulated": true,
+    "meltedAfterClear": true
+  },
+  "season": {
+    "spring": {
+      "state": "spring",
+      "leafAmount": 1,
+      "snowCover": 0,
+      "leafFall": 0.45,
+      "terrainAvgColor": [
+        0.266,
+        0.465,
+        0.084
+      ]
+    },
+    "summer": {
+      "state": "summer",
+      "leafAmount": 1,
+      "snowCover": 0,
+      "leafFall": 0,
+      "terrainAvgColor": [
+        0.201,
+        0.361,
+        0.064
+      ]
+    },
+    "autumn": {
+      "state": "autumn",
+      "leafAmount": 0.88,
+      "snowCover": 0,
+      "leafFall": 0.84,
+      "terrainAvgColor": [
+        0.379,
+        0.298,
+        0.09
+      ]
+    },
+    "winter": {
+      "state": "winter",
+      "leafAmount": 0.22,
+      "snowCover": 0.21,
+      "leafFall": 0.01,
+      "terrainAvgColor": [
+        0.377,
+        0.364,
+        0.24
+      ]
+    }
+  },
+  "switching": {
+    "samples": [
+      {
+        "cycle": 0,
+        "map": "shrine",
+        "geometries": 60,
+        "textures": 19,
+        "programs": 60,
+        "sceneChildren": 10,
+        "heapMB": 45.2
+      },
+      {
+        "cycle": 0,
+        "map": "village",
+        "geometries": 56,
+        "textures": 19,
+        "programs": 59,
+        "sceneChildren": 10,
+        "heapMB": 45.2
+      },
+      {
+        "cycle": 0,
+        "map": "riverside",
+        "geometries": 55,
+        "textures": 19,
+        "programs": 60,
+        "sceneChildren": 10,
+        "heapMB": 45.2
+      },
+      {
+        "cycle": 0,
+        "map": "mountain",
+        "geometries": 49,
+        "textures": 19,
+        "programs": 59,
+        "sceneChildren": 10,
+        "heapMB": 45.2
+      },
+      {
+        "cycle": 1,
+        "map": "shrine",
+        "geometries": 60,
+        "textures": 19,
+        "programs": 60,
+        "sceneChildren": 10,
+        "heapMB": 45.2
+      },
+      {
+        "cycle": 1,
+        "map": "village",
+        "geometries": 56,
+        "textures": 19,
+        "programs": 59,
+        "sceneChildren": 10,
+        "heapMB": 45.2
+      },
+      {
+        "cycle": 1,
+        "map": "riverside",
+        "geometries": 55,
+        "textures": 19,
+        "programs": 60,
+        "sceneChildren": 10,
+        "heapMB": 45.2
+      },
+      {
+        "cycle": 1,
+        "map": "mountain",
+        "geometries": 49,
+        "textures": 19,
+        "programs": 59,
+        "sceneChildren": 10,
+        "heapMB": 45.2
+      },
+      {
+        "cycle": 2,
+        "map": "shrine",
+        "geometries": 60,
+        "textures": 19,
+        "programs": 60,
+        "sceneChildren": 10,
+        "heapMB": 45.2
+      },
+      {
+        "cycle": 2,
+        "map": "village",
+        "geometries": 56,
+        "textures": 19,
+        "programs": 59,
+        "sceneChildren": 10,
+        "heapMB": 45.2
+      },
+      {
+        "cycle": 2,
+        "map": "riverside",
+        "geometries": 55,
+        "textures": 19,
+        "programs": 60,
+        "sceneChildren": 10,
+        "heapMB": 45.2
+      },
+      {
+        "cycle": 2,
+        "map": "mountain",
+        "geometries": 49,
+        "textures": 19,
+        "programs": 59,
+        "sceneChildren": 10,
+        "heapMB": 45.2
+      }
+    ],
+    "stableAcrossCycles": true,
+    "listenerAddsDuringSwitching": 0
+  },
+  "keyboard": {
+    "KeyW": {
+      "moved": 1.85,
+      "moveDir": -2.54,
+      "yaw": -2.54
+    },
+    "ArrowLeft": {
+      "moved": 1.85,
+      "moveDir": -0.97,
+      "yaw": -0.97
+    },
+    "KeyS": {
+      "moved": 1.85,
+      "moveDir": 0.6,
+      "yaw": 0.6
+    },
+    "ArrowRight": {
+      "moved": 1.85,
+      "moveDir": 2.17,
+      "yaw": 2.17
+    }
+  },
+  "console": {
+    "errors": [],
+    "warnings": []
+  },
+  "finishedAt": "2026-11-06T02:43:16.683Z"
+}

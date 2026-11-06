@@ -1,0 +1,161 @@
+[
+ {
+  "out": "screenshots/01_shrine_default.png",
+  "map": 0,
+  "reload": true,
+  "steps": 40
+ },
+ {
+  "out": "screenshots/02_village_default.png",
+  "map": 1,
+  "reload": true,
+  "steps": 40
+ },
+ {
+  "out": "screenshots/03_riverside_default.png",
+  "map": 2,
+  "reload": true,
+  "steps": 40
+ },
+ {
+  "out": "screenshots/04_mountain_default.png",
+  "map": 3,
+  "reload": true,
+  "steps": 40
+ },
+ {
+  "out": "screenshots/05_rain_riverside.png",
+  "map": 2,
+  "reload": true,
+  "weather": "rain",
+  "settle": 40
+ },
+ {
+  "out": "screenshots/06_rain_shrine_closeup.png",
+  "map": 0,
+  "reload": true,
+  "weather": "rain",
+  "settle": 40,
+  "zoom": 2.6,
+  "player": [
+   1.6,
+   4.2
+  ],
+  "hideUI": true,
+  "steps": 60
+ },
+ {
+  "out": "screenshots/07_snow_village.png",
+  "map": 1,
+  "reload": true,
+  "weather": "snow",
+  "settle": 160
+ },
+ {
+  "out": "screenshots/08_snow_shrine.png",
+  "map": 0,
+  "reload": true,
+  "weather": "snow",
+  "settle": 160
+ },
+ {
+  "out": "screenshots/09_autumn_village.png",
+  "map": 1,
+  "reload": true,
+  "season": "autumn",
+  "settle": 40
+ },
+ {
+  "out": "screenshots/10_autumn_mountain.png",
+  "map": 3,
+  "reload": true,
+  "season": "autumn",
+  "settle": 40
+ },
+ {
+  "out": "screenshots/11_winter_mountain.png",
+  "map": 3,
+  "reload": true,
+  "season": "winter",
+  "settle": 160
+ },
+ {
+  "out": "screenshots/12_winter_village.png",
+  "map": 1,
+  "reload": true,
+  "season": "winter",
+  "settle": 160
+ },
+ {
+  "out": "screenshots/13_closeup_shrine_bridge.png",
+  "map": 0,
+  "reload": true,
+  "zoom": 3.0,
+  "player": [
+   1.4,
+   4.6
+  ],
+  "yaw": 3.4,
+  "hideUI": true,
+  "steps": 60
+ },
+ {
+  "out": "screenshots/14_closeup_shrine_torii.png",
+  "map": 0,
+  "reload": true,
+  "zoom": 3.4,
+  "player": [
+   -5.6,
+   -5.4
+  ],
+  "yaw": 3.9,
+  "hideUI": true,
+  "steps": 60
+ },
+ {
+  "out": "screenshots/15_closeup_village.png",
+  "map": 1,
+  "reload": true,
+  "zoom": 2.8,
+  "player": [
+   -4.2,
+   1.8
+  ],
+  "hideUI": true,
+  "steps": 60
+ },
+ {
+  "out": "screenshots/16_closeup_riverside.png",
+  "map": 2,
+  "reload": true,
+  "zoom": 3.0,
+  "player": [
+   -0.6,
+   -2.2
+  ],
+  "hideUI": true,
+  "steps": 60
+ },
+ {
+  "out": "screenshots/17_closeup_mountain_bridge.png",
+  "map": 3,
+  "reload": true,
+  "zoom": 3.0,
+  "hideUI": true,
+  "steps": 60,
+  "js": "const b=window.__app.world.bridgeAt; window.__app.party.spawn(window.__app.world,b.x,b.z,0.9)"
+ },
+ {
+  "out": "screenshots/18_interaction_lantern.png",
+  "map": 0,
+  "reload": true,
+  "zoom": 3.4,
+  "player": [
+   2.0,
+   5.4
+  ],
+  "hideUI": true,
+  "steps": 14,
+  "js": "window.__app.step(40,1/30); window.__app.interact()"
+ }
+]

@@ -1,0 +1,22 @@
+// 快速截图（手动步进模式）：node tools/shot.mjs <url> <out.png> [width] [height] [steps] [script]
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const { chromium } = require('playwright');
+const [url, out, W = 1280, H = 720, steps = 30, script = ''] = process.argv.slice(2);
+const browser = await chromium.launch({ args: ['--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--ignore-gpu-blocklist'] });
+const page = await browser.newPage({ viewport: { width: +W, height: +H }, deviceScaleFactor: 1 });
+const logs = [];
+page.on('console', (m) => { if (['error', 'warning'].includes(m.type())) logs.push(`[${m.type()}] ${m.text()}`); });
+page.on('pageerror', (e) => logs.push('[pageerror] ' + e.message));
+const t0 = Date.now();
+await page.goto(url + (url.includes('?') ? '&' : '?') + 'manual&capture');
+await page.waitForFunction(() => window.__app && window.__app.ready, null, { timeout: 180000 });
+const t1 = Date.now();
+if (script) await page.evaluate(script);
+const tr = Date.now();
+const snap = await page.evaluate((n) => window.__app.step(n, 1 / 30), +steps);
+const t2 = Date.now();
+await page.screenshot({ path: out });
+console.log(JSON.stringify({ loadMs: t1 - t0, stepMs: t2 - tr, render: snap.render, mem: snap.memory, mapLoadMs: snap.loadMs, stats: snap.stats, player: snap.player }));
+console.log(logs.slice(0, 30).join('\n'));
+await browser.close();

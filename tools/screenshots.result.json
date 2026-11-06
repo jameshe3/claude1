@@ -1,0 +1,365 @@
+{
+  "results": [
+    {
+      "out": "screenshots/01_shrine_default.png",
+      "map": "shrine",
+      "weather": "clear",
+      "season": "summer",
+      "snow": 0,
+      "wet": 0,
+      "player": {
+        "x": 5.4,
+        "y": 0.007244402775540936,
+        "z": 16.5,
+        "yaw": 3.3415926535897933,
+        "moving": false
+      },
+      "memory": {
+        "geometries": 57,
+        "textures": 19,
+        "programs": 35
+      }
+    },
+    {
+      "out": "screenshots/02_village_default.png",
+      "map": "village",
+      "weather": "clear",
+      "season": "spring",
+      "snow": 0,
+      "wet": 0,
+      "player": {
+        "x": 3.6,
+        "y": 0.20380796492099762,
+        "z": 15.2,
+        "yaw": 3.141592653589793,
+        "moving": false
+      },
+      "memory": {
+        "geometries": 53,
+        "textures": 19,
+        "programs": 45
+      }
+    },
+    {
+      "out": "screenshots/03_riverside_default.png",
+      "map": "riverside",
+      "weather": "clear",
+      "season": "summer",
+      "snow": 0,
+      "wet": 0,
+      "player": {
+        "x": -9.5,
+        "y": 0.02271976415067911,
+        "z": -2.6,
+        "yaw": 1.5707963267948966,
+        "moving": false
+      },
+      "memory": {
+        "geometries": 52,
+        "textures": 19,
+        "programs": 46
+      }
+    },
+    {
+      "out": "screenshots/04_mountain_default.png",
+      "map": "mountain",
+      "weather": "clear",
+      "season": "summer",
+      "snow": 0,
+      "wet": 0,
+      "player": {
+        "x": -9.239960205475462,
+        "y": 0.5355884031922336,
+        "z": 14.632376960974689,
+        "yaw": 1.1968461310309935,
+        "moving": false
+      },
+      "memory": {
+        "geometries": 46,
+        "textures": 19,
+        "programs": 45
+      }
+    },
+    {
+      "out": "screenshots/05_rain_riverside.png",
+      "map": "riverside",
+      "weather": "rain",
+      "season": "summer",
+      "snow": 0,
+      "wet": 0.8,
+      "player": {
+        "x": -9.5,
+        "y": 0.02271976415067911,
+        "z": -2.6,
+        "yaw": 1.5707963267948966,
+        "moving": false
+      },
+      "memory": {
+        "geometries": 54,
+        "textures": 19,
+        "programs": 48
+      }
+    },
+    {
+      "out": "screenshots/06_rain_shrine_closeup.png",
+      "map": "shrine",
+      "weather": "rain",
+      "season": "summer",
+      "snow": 0,
+      "wet": 0.86,
+      "player": {
+        "x": 1.6,
+        "y": 0.005238789599388745,
+        "z": 4.2,
+        "yaw": 3.3415926535897933,
+        "moving": false
+      },
+      "memory": {
+        "geometries": 58,
+        "textures": 19,
+        "programs": 48
+      }
+    },
+    {
+      "out": "screenshots/07_snow_village.png",
+      "map": "village",
+      "weather": "snow",
+      "season": "spring",
+      "snow": 1,
+      "wet": 0,
+      "player": {
+        "x": 3.6,
+        "y": 0.20380796492099762,
+        "z": 15.2,
+        "yaw": 3.141592653589793,
+        "moving": false
+      },
+      "memory": {
+        "geometries": 56,
+        "textures": 19,
+        "programs": 60
+      }
+    },
+    {
+      "out": "screenshots/08_snow_shrine.png",
+      "map": "shrine",
+      "weather": "snow",
+      "season": "summer",
+      "snow": 1,
+      "wet": 0,
+      "player": {
+        "x": 5.4,
+        "y": 0.007244402775540936,
+        "z": 16.5,
+        "yaw": 3.3415926535897933,
+        "moving": false
+      },
+      "memory": {
+        "geometries": 60,
+        "textures": 19,
+        "programs": 60
+      }
+    },
+    {
+      "out": "screenshots/09_autumn_village.png",
+      "map": "village",
+      "weather": "clear",
+      "season": "autumn",
+      "snow": 0,
+      "wet": 0,
+      "player": {
+        "x": 3.6,
+        "y": 0.20380796492099762,
+        "z": 15.2,
+        "yaw": 3.141592653589793,
+        "moving": false
+      },
+      "memory": {
+        "geometries": 56,
+        "textures": 19,
+        "programs": 59
+      }
+    },
+    {
+      "out": "screenshots/10_autumn_mountain.png",
+      "map": "mountain",
+      "weather": "clear",
+      "season": "autumn",
+      "snow": 0,
+      "wet": 0,
+      "player": {
+        "x": -9.239960205475462,
+        "y": 0.5355884031922336,
+        "z": 14.632376960974689,
+        "yaw": 1.1968461310309935,
+        "moving": false
+      },
+      "memory": {
+        "geometries": 49,
+        "textures": 19,
+        "programs": 59
+      }
+    },
+    {
+      "out": "screenshots/11_winter_mountain.png",
+      "map": "mountain",
+      "weather": "clear",
+      "season": "winter",
+      "snow": 0.49,
+      "wet": 0,
+      "player": {
+        "x": -9.239960205475462,
+        "y": 0.5355884031922336,
+        "z": 14.632376960974689,
+        "yaw": 1.1968461310309935,
+        "moving": false
+      },
+      "memory": {
+        "geometries": 49,
+        "textures": 19,
+        "programs": 59
+      }
+    },
+    {
+      "out": "screenshots/12_spring_shrine.png",
+      "map": "shrine",
+      "weather": "clear",
+      "season": "spring",
+      "snow": 0,
+      "wet": 0,
+      "player": {
+        "x": 5.4,
+        "y": 0.007244402775540936,
+        "z": 16.5,
+        "yaw": 3.3415926535897933,
+        "moving": false
+      },
+      "memory": {
+        "geometries": 60,
+        "textures": 19,
+        "programs": 60
+      }
+    },
+    {
+      "out": "screenshots/13_closeup_shrine_bridge.png",
+      "map": "shrine",
+      "weather": "clear",
+      "season": "summer",
+      "snow": 0,
+      "wet": 0,
+      "player": {
+        "x": 1.4,
+        "y": 0.005959272384643562,
+        "z": 4.6,
+        "yaw": 3.4,
+        "moving": false
+      },
+      "memory": {
+        "geometries": 59,
+        "textures": 19,
+        "programs": 60
+      }
+    },
+    {
+      "out": "screenshots/14_closeup_shrine_torii.png",
+      "map": "shrine",
+      "weather": "clear",
+      "season": "summer",
+      "snow": 0,
+      "wet": 0,
+      "player": {
+        "x": -5.6,
+        "y": 0.7510977983474731,
+        "z": -5.4,
+        "yaw": 3.9,
+        "moving": false
+      },
+      "memory": {
+        "geometries": 60,
+        "textures": 19,
+        "programs": 60
+      }
+    },
+    {
+      "out": "screenshots/15_closeup_village.png",
+      "map": "village",
+      "weather": "clear",
+      "season": "spring",
+      "snow": 0,
+      "wet": 0,
+      "player": {
+        "x": -3.95,
+        "y": 0.0918927825987339,
+        "z": 1.8,
+        "yaw": 3.141592653589793,
+        "moving": false
+      },
+      "memory": {
+        "geometries": 56,
+        "textures": 19,
+        "programs": 59
+      }
+    },
+    {
+      "out": "screenshots/16_closeup_riverside.png",
+      "map": "riverside",
+      "weather": "clear",
+      "season": "summer",
+      "snow": 0,
+      "wet": 0,
+      "player": {
+        "x": -0.6,
+        "y": 0.03154044225811957,
+        "z": -2.2,
+        "yaw": 1.5707963267948966,
+        "moving": false
+      },
+      "memory": {
+        "geometries": 55,
+        "textures": 19,
+        "programs": 60
+      }
+    },
+    {
+      "out": "screenshots/17_closeup_mountain_bridge.png",
+      "map": "mountain",
+      "weather": "clear",
+      "season": "summer",
+      "snow": 0,
+      "wet": 0,
+      "player": {
+        "x": 7.263805059079539,
+        "y": 1.6821434991858892,
+        "z": 13.273723076285906,
+        "yaw": 0.9,
+        "moving": false
+      },
+      "memory": {
+        "geometries": 48,
+        "textures": 19,
+        "programs": 59
+      }
+    },
+    {
+      "out": "screenshots/18_interaction_lantern.png",
+      "map": "shrine",
+      "weather": "clear",
+      "season": "summer",
+      "snow": 0,
+      "wet": 0,
+      "player": {
+        "x": 5,
+        "y": -0.01093172375112772,
+        "z": 12,
+        "yaw": 3.3415926535897933,
+        "moving": false
+      },
+      "memory": {
+        "geometries": 59,
+        "textures": 19,
+        "programs": 60
+      }
+    }
+  ],
+  "errors": []
+}

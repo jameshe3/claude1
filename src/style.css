@@ -1,0 +1,89 @@
+:root {
+  --ink: #2e2a26;
+  --paper: rgba(250, 246, 236, 0.86);
+  --paper-strong: rgba(252, 249, 241, 0.96);
+  --line: rgba(80, 64, 44, 0.18);
+  --accent: #c8553d;
+  --accent-soft: rgba(200, 85, 61, 0.14);
+  --muted: #7a6f62;
+  --font: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Source Han Sans SC", "WenQuanYi Zen Hei", sans-serif;
+  --serif: "Songti SC", "STSong", "Noto Serif SC", "Source Han Serif SC", "SimSun", "WenQuanYi Zen Hei", serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; background: #1c2230; font-family: var(--font); color: var(--ink); }
+#scene { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; outline: none; touch-action: none; cursor: grab; }
+#scene:active { cursor: grabbing; }
+#ui { position: fixed; inset: 0; pointer-events: none; }
+#ui button { font-family: var(--font); }
+
+.panel {
+  position: absolute; left: 16px; top: 16px; width: 272px; pointer-events: auto;
+  background: var(--paper); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 8px 28px rgba(20, 16, 10, 0.18);
+  padding: 12px 12px 12px; max-height: calc(100vh - 92px); overflow: auto;
+}
+.panel.collapsed .panel-body { display: none; }
+.brand { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.brand-title { font-family: var(--serif); font-size: 18px; letter-spacing: 3px; font-weight: 700; }
+.collapse { width: 26px; height: 26px; border-radius: 8px; border: 1px solid var(--line); background: transparent; cursor: pointer; color: var(--muted); font-size: 15px; line-height: 1; }
+.label { font-size: 11px; color: var(--muted); letter-spacing: 2px; margin: 9px 2px 5px; }
+.maps { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.map-btn {
+  position: relative; text-align: left; border: 1px solid var(--line); background: rgba(255, 255, 255, 0.55); border-radius: 10px;
+  padding: 7px 8px 6px 8px; cursor: pointer; color: var(--ink); transition: background .2s, border-color .2s, transform .15s;
+}
+.map-btn:hover { background: rgba(255, 255, 255, 0.9); transform: translateY(-1px); }
+.map-btn.on { border-color: var(--accent); background: var(--accent-soft); }
+.map-btn .num { position: absolute; right: 7px; top: 5px; font-size: 10px; color: var(--muted); }
+.map-btn .mname { display: block; font-size: 13px; font-weight: 600; letter-spacing: 1px; }
+.map-btn .msub { display: block; font-size: 10.5px; color: var(--muted); margin-top: 2px; }
+.row2 { display: grid; grid-template-columns: 1fr; gap: 0; }
+.seg { display: flex; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: rgba(255, 255, 255, 0.5); }
+.seg button { flex: 1; border: none; background: transparent; padding: 7px 0; cursor: pointer; font-size: 13px; color: var(--ink); border-right: 1px solid var(--line); transition: background .2s; }
+.seg button:last-child { border-right: none; }
+.seg button:hover { background: rgba(255, 255, 255, 0.85); }
+.seg button.on { background: var(--accent); color: #fff; }
+.tools { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.tools button { border: 1px solid var(--line); background: rgba(255, 255, 255, 0.55); border-radius: 9px; padding: 7px 0; cursor: pointer; font-size: 12.5px; color: var(--ink); }
+.tools button:hover { background: rgba(255, 255, 255, 0.9); }
+.tools button.on { background: #3d5a6c; color: #fff; border-color: #3d5a6c; }
+
+.hint {
+  position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); pointer-events: none;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 14px; max-width: min(960px, calc(100vw - 32px));
+  padding: 7px 16px; border-radius: 999px; background: rgba(28, 26, 24, 0.45); color: #f4efe6; font-size: 12px; letter-spacing: .5px;
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.hint b { font-weight: 600; color: #ffe2b0; }
+
+.title-card { position: absolute; left: 50%; top: 9%; transform: translateX(-50%); text-align: center; opacity: 0; pointer-events: none; color: #fffaf0; text-shadow: 0 2px 14px rgba(0, 0, 0, 0.45); }
+.title-card .t-main { font-family: var(--serif); font-size: 34px; letter-spacing: 10px; font-weight: 700; }
+.title-card .t-sub { font-size: 13px; letter-spacing: 6px; margin-top: 6px; opacity: .9; }
+.title-card.show { animation: title 4.2s ease forwards; }
+@keyframes title { 0% { opacity: 0; transform: translate(-50%, 10px); } 15% { opacity: 1; transform: translate(-50%, 0); } 70% { opacity: 1; } 100% { opacity: 0; } }
+
+.toast { position: absolute; left: 50%; bottom: 62px; transform: translateX(-50%); padding: 7px 16px; border-radius: 10px; background: var(--paper-strong); font-size: 13px; opacity: 0; pointer-events: none; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15); white-space: nowrap; }
+.toast.show { animation: toast 2.6s ease forwards; }
+@keyframes toast { 0% { opacity: 0; transform: translate(-50%, 6px); } 12% { opacity: 1; transform: translate(-50%, 0); } 78% { opacity: 1; } 100% { opacity: 0; } }
+
+.stat { position: absolute; right: 14px; bottom: 14px; font-size: 11px; color: rgba(255, 255, 255, 0.75); text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); pointer-events: none; }
+.loading { position: absolute; inset: 0; display: flex; flex-direction: column; gap: 12px; align-items: center; justify-content: center; background: rgba(20, 22, 30, 0.35); color: #fff; font-size: 14px; letter-spacing: 3px; opacity: 0; transition: opacity .2s; pointer-events: none; }
+.loading.show { opacity: 1; }
+.spinner { width: 28px; height: 28px; border-radius: 50%; border: 3px solid rgba(255, 255, 255, 0.3); border-top-color: #fff; animation: spin 0.9s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+@media (max-height: 800px) {
+  .panel { width: 252px; padding: 10px; }
+  .map-btn { padding: 5px 7px; }
+  .map-btn .msub { display: none; }
+  .label { margin: 6px 2px 4px; }
+  .seg button, .tools button { padding: 5px 0; }
+  .title-card .t-main { font-size: 28px; }
+}
+@media (max-width: 700px) {
+  .panel { width: calc(100vw - 32px); }
+  .hint { display: none; }
+}
+
+.capture * { transition: none !important; }
+.capture .stat { display: none; }
